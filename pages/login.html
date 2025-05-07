@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Connexion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="../src/login.css">
+    <link rel="stylesheet" href="../dist/output.css">
+    <script src="../src/login.js" defer></script>
+
+</head>
+<body>
+    <div class="container w-[90%] md:w-[50%] lg:w-[35%] space-y-2 py-6 px-4">
+        <div class="back"><a href="../presentation.html" class="text-sm"><i class="fas fa-arrow-left"></i> Acceuil</a></div>
+        <h2>Connexion</h2>
+        <span id="warningForm">❌Veuillez remplir tous les champs ci-dessous!</span>
+        <div class="input-group">
+            <span class="user"><i class="fas fa-user"></i></span>
+            <input class="text-base" type="text" id="userNameMail" placeholder="Nom utilisateur ou email" required>
+        </div>
+      <!--  <div class="input-group">
+            <span class="adresse"><i class="fas fa-envelope"></i></span>
+            <input type="email" id="email" placeholder="Adresse Email">
+            <span id="warningEmail">❌Email invalide!</span>
+        </div>-->
+        <div class="input-group">
+            <span class="lock"><i class="fas fa-lock"></i></span>
+            <input class="text-base" type="password" id="password" placeholder="Mot de passe" required>
+            <button type="button" id="btnPass" class="btn-pass" >
+                <span class="eye-icon" id="eye-icon"><i class="fas fa-eye"></i> </span>
+                <span class="eye-icon-slash" id="eye-icon-slash"><i class="fas fa-eye-slash"></i> </span>
+            </button>
+            <span id="warningPassword">
+        </div>
+        <span id="check" class="hidden text-red-500 text-sm font-100"></span>
+        <div class="flex justify-between w-full">
+            <div class="flex gap-1 items-center">
+                <input class="h-4 w-4 text-voicify-blue focus:ring-voicify-blue border-gray-300 rounded dark:border-gray-600 dark:bg-gray-700 text-base" type="checkbox" id="remember-me">
+                <label for="remember-me" class="text-sm text-gray-900">
+                Se souvenir de moi
+            </label>
+            </div>
+
+            <div>
+                <a class="text-sm text-[#6c63ff]" href="">Mot de passe oublié ?</a>
+            </div>
+        </div>
+        <button class="btn btn-primary" id="btnSubmit">Se connecter</button>
+        <!-- <button class="btn btn-danger" id="btnReset">Annuler</button> -->
+        <p>Vous n'avez de compte?</p>
+        <a class="connectYou" href="index.html">Créer un compte</a>
+    </div>
+
+</body>
+</html>

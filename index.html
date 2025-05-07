@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="./dist/output.css" rel="stylesheet">
   <script src="./src/app.js"defer></script>
+  <script src="./src/Dashboad.js" defer></script>
 </head>
 <body class="bg-gray-100 overflow-x-hidden">
 
@@ -34,9 +35,9 @@
           <img src="./images/IMG_0189.JPG" alt="photo de profil" class="w-10 h-10 rounded-full">
 
           <select name="account" id="accountUsername" class=" border-none outline-none focus:outline-none flex flex-col text-sm font-bold rounded-full focus:ring-2 focus:ring-gray-900 p-1 items-center text-gray-900">
-            <option value="username" class="text-sm font-semibold">CHICO JD</option>
-            <option value="Other account" class="text-sm font-semibold">Other account</option>
-            <option value="Log out" class="text-sm font-semibold">Log out</option>
+            <option value="username" class="text-sm font-semibold" id="username1">CHICO JD</option>
+            <option value="Other account" id="OtherAccount" class="text-sm font-semibold">Other account</option>
+            <option value="Log out" class="text-sm font-semibold"><button id="logOut" class="border:none block focus-outline-none bg-transparent">log out</button></option>
           </select>
        
         </div>
@@ -86,8 +87,8 @@
           <img src="./images/IMG_0189.JPG" alt="photo de profil" class="w-10 h-10 rounded-full">
 
           <div class="flex flex-col">
-            <h2 class="text-md text-gray-900 font-bold">CHICO JD <span class="size-2 text-blue-600 rounded-full"><i class="fas fa-check-circle"></i></span></h2>
-            <span class="text-sm text-gray-400 font-bold">@chicojd</span>
+            <h2 class="text-md text-gray-900 font-bold" id="username2">CHICO JD <span class="size-2 text-blue-600 rounded-full"><i class="fas fa-check-circle"></i></span></h2>
+            <span class="text-sm text-gray-400 font-bold" id="idUser">@chicojd</span>
           </div>
         </div>
 

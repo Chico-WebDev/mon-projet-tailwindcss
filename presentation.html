@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solaria – Connectés par la lumière</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            poppins: ["Poppins", "sans-serif"],
+            orbitron: ["Orbitron", "sans-serif"]
+          },
+          colors: {
+            solaria: '#facc15',
+            galaxie: '#7c3aed',
+            night: '#0f172a',
+            moon: '#f9fafb'
+          }
+        }
+      },
+      darkMode: 'class'
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      animation: fadeIn 2s ease-in-out;
+      
+    }
+    .glow-text {
+      text-shadow: 0 0 10px #15faee70, 0 0 20px #15d8fa68;
+    }
+
+    #overview, #company {
+      animation: fadeIn 5s ease-in-out;
+    
+      backdrop-filter: blur(8px);
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    /* .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    } */
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    .stars {
+    
+      margin-bottom: 20px;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/stardust.png');
+      animation: twinkling 3s infinite alternate;
+    }
+    @keyframes twinkling {
+      0% { opacity: 0.7; }
+      100% { opacity: 1; }
+    }
+    .logo {
+      width: 80px;
+      height: 80px;
+      animation: rotate 4s linear infinite;
+    }
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+   
+
+
+    .nav li a {
+      text-decoration: none;
+      color: #ffff;
+    }
+
+  </style>
+</head>
+<body class="bg-gradient-to-br from-night via-black to-night flex flex-col items-center justify-center relative">
+  <div class="stars">
+  <header>
+      <div class="flex w-full justify-between lg:justify-around p-4">
+        <img src="images/ChatGPT_Image_31_mars_2025__19_56_26-removebg-preview.png" class="w-9" alt="">
+        <ul class="hidden nav lg:flex gap-10 items-center">
+          <li><a href="">Acceuil</a></li>
+          <li><a href="">Overview</a></li>
+          <li><a href="">Company</a></li>
+        
+        </ul>
+        <div class="flex gap-2 items-center">
+          <button onclick="singIn()" class="bg-[#15d8fabd] text-moon hover:bg-moon hover:text-night p-1 lg:p-2 rounded">sing up</button>
+          <button onclick="login()" class="bg-moon text-night hover:bg-[#15d8fabd] transition-0.6s hover:text-moon p-1 lg:p-2 rounded">login</button>
+        </div>
+      </div>
+  </header>
+
+  <main class="mt-16 mb-24">
+    <div class="text-center mt-16 mb-16 fade-in relative z-10">
+      <svg class="logo mx-auto mb-4" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="50" cy="50" r="30" stroke="#15d8fabd" stroke-width="4" fill="none" />
+        <circle cx="50" cy="20" r="5" fill="white" />
+      </svg>
+      <h1 class="text-xl md:text-3xl lg:text-5xl font-orbitron text-moon glow-text mb-6">Solaria</h1>
+      <p id="slogan" class="text-xl md:text-2xl text-moon mb-10 font-medium"></p>
+      <button onclick="enterApp()" class="bg-moon text-night px-2 py-1 lg:px-6 lg:py-3 rounded-xl text-lg font-semibold shadow-md hover:bg-[#15d8fabd] hover:text-moon hover:scale-105 transition-transform duration-300">
+        Entrer dans Solaria
+      </button>
+    </div>
+
+    <div id="overview" class="hidden lg:flex-row gap-10 p-8 mt-8 bg-moon rounded">
+        <div class="w-[100%] lg:w-[50%]">
+          <img src="images/all screen.jpg" class="w-[80%] rounded" alt="">
+        </div>
+        <div class="items-center justify-center flex flex-col gap-10 w-[100%] lg:w-[50%]">
+          <h1>Overview</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis aliquam corporis dignissimos quasi obcaecati repellat ducimus adipisci doloremque hic consequatur mollitia odio cupiditate, unde, repudiandae, labore facilis debitis neque sit.</p>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam rerum sint perspiciatis deleniti facilis eaque a accusantium aliquid explicabo voluptas ipsam quia commodi, voluptate esse aut quidem odit sapiente? Delectus illo animi maiores fugit facilis perferendis sunt nobis! Repudiandae adipisci iusto saepe quidem at unde rerum deleniti accusamus perspiciatis eligendi, itaque nobis quas et beatae reiciendis cumque inventore quasi ullam!</p>
+          <button onclick="enterApp()" class="bg-[teal] items-center text-moon hover:bg-[#15d8fabd] hover:text-night py-2 px-6 rounded">Apply</button>
+        </div>
+    </div>
+
+    <div id="company" class="hidden md:flex-row gap-10 p-8 mt-8 bg-moon rounded">
+      <div class="items-center justify-center flex flex-col gap-10w-[100%] lg:w-[50%]">
+        <h1>Overview</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis aliquam corporis dignissimos quasi obcaecati repellat ducimus adipisci doloremque hic consequatur mollitia odio cupiditate, unde, repudiandae, labore facilis debitis neque sit.</p>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam rerum sint perspiciatis deleniti facilis eaque a accusantium aliquid explicabo voluptas ipsam quia commodi, voluptate esse aut quidem odit sapiente? Delectus illo animi maiores fugit facilis perferendis sunt nobis! Repudiandae adipisci iusto saepe quidem at unde rerum deleniti accusamus perspiciatis eligendi, itaque nobis quas et beatae reiciendis cumque inventore quasi ullam!</p>
+        <button onclick="enterApp()" class="bg-[teal] items-center text-moon hover:bg-[#15d8fabd] hover:text-night py-2 px-6 rounded">Apply</button>
+      </div>
+      <div class="w-[100%] lg:w-[50%]">
+        <img src="images/card iphone 4.jpg" class="w-[80%] rounded" alt="">
+      </div>
+  </div>
+  </main>
+  <footer class="mt-24 mb-[100%]">
+    <div class="flex justify-center py-4 text-moon">
+      &copy; SOLARIA All Right Reserved by CHICO JD ❤
+    </div>
+  </footer>
+</div>
+  <script>
+    let text = "Connectés par la lumière"
+        let index = 0;
+
+        function typeEffect() {
+           if (index < text.length) {
+            document.getElementById('slogan').innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 100);
+           } 
+
+        }
+
+        window.addEventListener("load", typeEffect)
+
+    function enterApp() {
+      window.location.href = './pages/sing-in.html';
+    }
+
+    function singIn  () {
+      window.location.href = './pages/sing-in.html'
+    }
+
+    function login () {
+      window.location.href = './pages/login.html'
+    }
+  </script>
+</body>
+</html>

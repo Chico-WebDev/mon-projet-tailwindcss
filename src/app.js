@@ -44,7 +44,7 @@ const fileURL = URL.createObjectURL(file);
 
   if(content) {
     html += `<p class="text-lg flex-wrap text-gray-900">${content}</p>`
-  }
+  }                 
 
   if(file.type.startsWith("image")) {
     html += `<div class="bg-gray-300">

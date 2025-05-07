@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href="../src/sign-in.css">
+    <script src="../src/sign-in.js" defer></script>
+</head>
+<body>
+
+
+    <div class="container block m-auto w-[95%] items-center justify-center md:w-[80%] lg:w-[60%]"> 
+        <div class="back"><a href="../presentation.html"><i class="fas fa-arrow-left"></i> Acceuil</a></div>
+        <h1 class="text-xl md:text-2xl lg:text-3xl">Create Account</h1>
+        <form id="formContent" action="#">
+            <div class="flex flex-col lg:flex-row lg:gap-12 w-full">
+                <div class="first">
+                <div class="nom"> 
+                        <label for="nom"><i class="fas fa-user"></i>
+                            Username</label>
+                        <input class="text-base" type="text" name="nom" id="nom" autocomplete="name" placeholder="Entrer nom utilisateur" required>
+                </div>
+
+                    <div class="email">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input class="text-base" type="email" name="email" id="email" autocomplete="email" placeholder="example@gmaim.com" required>
+                    </div>
+
+                    <div class="password">
+                        <label for="pass"><i class="fas fa-lock"></i> Password</label>
+                        <div class="content">
+                            <input class="text-base" type="password" name="mdp" id="pass" autocomplete="new-password" placeholder="entrer un mot de passe" required>
+                            <button type="button" id="btnPass" class="btn-pass" >
+                                <span id="eye-icon" class="eye-icon hidden cursor-pointer size-10"><i class="fas fa-eye"></i> </span>
+                                <span id="eye-icon-slash" class="eye-icon-slash"><i class="fas fa-eye-slash"></i> </span>
+                            </button>
+                        </div>
+                        <!-- <input type="password" id="password" placeholder="Mot de passe" class="border p-2 rounded w-full mb-2"> -->
+                        <div id="passwordHach" class="hidden flex flex-col gap-2 w-full">
+                            <!-- Barre de force -->
+                            <div class="textLevels mt-1 flex justify-between">
+                                <p id="strengthText" class="text-sm"></p>
+                                <p id="strengthTotal" class="text-sm"></p>
+                            </div>
+                            <div class="w-full h-2 bg-gray-300 rounded">
+                            <div id="strengthBar" class="h-2 bg-red-500 rounded transition-all duration-300" style="width: 0%;"></div>
+                            </div>
+                            <div id="hach" class="flex flex-col text-left"></div>
+                         </div>
+                        <!-- <span id="warningPassword">❌Entrer un mot de passe qui contient au moins:<br> 8 caractères(a-z,A-Z,0-9,./$*-_&@)</span> -->
+                    </div>
+                </div>
+
+                <div class="second">
+                    <div class="passwordConfirm">
+                        <label for="passConfirm"><i class="fas fa-lock"></i> Confirm Password</label>
+                        <div class="content">
+                            <input class="text-base" type="password" name="mdp" id="passConfirm" autocomplete="confirm-password" placeholder="confirmer le mot de passe" required>
+                            <button type="button" id="btn-confirm" class="btn-pass" >
+                            <span id="eye-icon-confirm" class="eye-icon"><i class="fas fa-eye"></i> </span>
+                            <span id="eye-icon-slash-confirm" class="eye-icon-slash"><i class="fas fa-eye-slash"></i> </span>
+                            </button>
+                         </div>
+                        <!-- <span id="warningPassword">❌Entrer un mot de passe qui contient au moins:<br> 8 caractères(a-z,A-Z,0-9,./$*-_&@)</span> -->
+                        <span id="noConform" class=" hidden"></span>
+                    </div>
+
+
+                    <div class="date">
+                        <label for="date"><i class="fas fa-calendar"></i> Date</label>
+                        <input class="text-base" type="date" name="date" id="date" autocomplete="work">
+                </div>
+
+                    <div class="genre-content">
+                        <span class="title-genre">Genre</span>
+                        <div class="genre">
+                            <div class="homme">
+                            <input type="radio" name="homme" id="homme" autocomplete="sex" required>
+                            <label for="homme">Homme</label>
+                            </div>
+
+                            <div class="femme">
+                            <input type="radio" name="femme" id="femme" autocomplete="sex">
+                            <label for="femme">Femme</label>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="error" style="color:red;"></div>
+            <div class="btn">
+                <button type="submit" class="btn-form btn-submit" id="btnSubmit">S'inscrire</button>
+                <!-- <button type="reset" class="btn-form btn-reset" id="btnReset">Annuler</button> -->
+            </div>
+
+            <span>Vous avez dejà un compte?</span>
+            <a class="connectYou" href="./login.html">Connectez-vous !</a>
+           
+        </form>
+        
+
+    </div>
+
+    <!-- <div class="data-save" id="data-save">
+        <h2>Données enrégistrées✅</h2>
+    <div class="donne" id="donne"> -->
+    </div>
+    </div>
+    <script>
+        const password = document.getElementById('pass');
+        const strengthBar = document.getElementById('strengthBar');
+        const strengthText = document.getElementById('strengthText');
+        const strengthTotal = document.getElementById("strengthTotal");
+        const passwordHach = document.getElementById("passwordHach");
+        const hach = document.getElementById("hach")
+        
+      
+        password.addEventListener('input', () => {
+          const val = password.value;
+
+        if(val.length > 0) {
+          passwordHach.classList.remove('hidden')
+
+        hach.innerHTML = `<div id="caractere" class="text-gray-500"><i id="caractereSucces" class="fas fa-exclamation-triangle"></i> Au moins 8 caractères</div>
+                <div id="majuscule"><i id="majusculeSucces" class="fas fa-exclamation-triangle"></i> Au moins une majuscule</div>
+                <div id="chiffre"><i id="chiffreSucces" class="fas fa-exclamation-triangle"></i> Au moins un chiffre</div>
+                <div id="special"><i id="specialSucces" class="fas fa-exclamation-triangle"></i> Au moins un caractère spécial</div>` 
+         } else {
+            passwordHach.classList.add('hidden')
+         }
+
+        
+          let strength = 0;
+      
+          // Analyse du mot de passe
+          if (val.length >= 8)  {
+            document.getElementById("caractere").classList.add("text-green-600")
+            document.getElementById("caractereSucces").classList.remove("fa-exclamation-triangle")
+            document.getElementById("caractereSucces").classList.add("fa-check")
+            strength++
+          };                 // Longueur minimale
+
+          if (/[A-Z]/.test(val)) {
+            document.getElementById("majuscule").classList.add("text-green-600")
+            document.getElementById("caractereSucces").classList.remove("fa-exclamation-triangle")
+            document.getElementById("caractereSucces").classList.add("fa-check")
+            strength++;
+            }              // Majuscule
+          
+             if (/[0-9]/.test(val)) { 
+                document.getElementById("chiffre").classList.add("text-green-600")
+                document.getElementById("caractereSucces").classList.remove("fa-exclamation-triangle")
+                document.getElementById("caractereSucces").classList.add("fa-check")
+                strength++;              // Chiffre
+             }
+
+            if (/[^A-Za-z0-9]/.test(val)) {
+                document.getElementById("special").classList.add("text-green-600")
+                document.getElementById("caractereSucces").classList.remove("fa-exclamation-triangle")
+                document.getElementById("caractereSucces").classList.add("fa-check")
+                strength++;       // Caractère spécial
+            }
+      
+          // Mise à jour visuelle
+          let color, width, label;
+          switch (strength) {
+            case 0:
+            case 1:
+              color = 'bg-red-500'; width = '25%'; label = 'Faible';
+              break;
+            case 2:
+              color = 'bg-yellow-500'; width = '50%'; label = 'Moyen';
+              break;
+            case 3:
+              color = 'bg-blue-500'; width = '75%'; label = 'Bon';
+              break;
+            case 4:
+              color = 'bg-green-500'; width = '100%'; label = 'Fort';
+              break;
+          }
+          
+          strengthBar.className = `h-2 rounded transition-all duration-300 ${color}`;
+          strengthBar.style.width = width;
+          strengthText.textContent = `Force : ${label}`;
+          strengthTotal.textContent = `${val.length}/8 caractères minimum`
+        
+                        });
+      </script>
+</body>
+</html>

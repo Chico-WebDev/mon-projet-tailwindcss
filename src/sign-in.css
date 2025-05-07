@@ -1,0 +1,365 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    background-color: #fff;
+    /* font-family: 'Poppins', sans-serif; */
+    
+        min-height: 100vh;
+        
+        margin: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    
+} 
+
+/* .data-save {
+    display: none;
+    margin: auto;
+    padding: 20px;
+    margin-top: auto;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.data-save h2 {
+    color: black;
+    font-weight: 800;
+    padding-bottom: 10px;
+}
+
+.donne {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: auto;
+    padding: 30px;
+    box-shadow: 0px 0px 4px white;
+    justify-items: center;
+    text-align: center;
+    border-radius: 20px;
+    color: #f4f4f4;
+    font-weight: 600;
+
+}
+
+.title {
+    font-weight: bold;
+    text-shadow: 2px  2px 4px gray;
+    padding: 30px;
+} */
+
+/* .container {
+    display: block;
+    margin: auto;
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+} */
+
+.container .connectYou {
+    text-decoration: none;
+    color: #6c63ff;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+.container .back a{
+    text-decoration: none;
+    color: rgba(128, 128, 128, 0.96);
+}
+
+
+.container .back {
+    text-align: left;
+    font-family: 'Poppins', 'sans-serif';
+}
+
+h1 {
+    font-family: 'Poppins', 'sans-serif';
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 30px 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+     border-radius: 20px;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    backdrop-filter: blur(10px);
+    background: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #333;
+    animation: slideUp 0.6s ease forwards;
+}
+
+
+
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .contentForm{
+    display: flex;
+   gap: 50px;
+    width: 100%;
+    
+  }
+
+  .first, .second {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+.nom, .email, .password, .passwordConfirm, .date {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: start;
+    padding: 5px 0;
+    
+}
+
+.container .nom, .email, .password, .passwordConfirm, .date, label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*.container .password .content {
+    position: relative;
+    background-color: white;
+    padding: 0;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374);
+}
+*/
+
+.container .password .content {
+    display: flex;
+    width: 100%;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374);
+    border: none;
+    border-radius: 10px;    
+    padding: 12px 15px;
+    font-size: 16px;
+    gap: 5px;
+    align-items: center;
+}
+.container .passwordConfirm .content {
+    display: flex;
+    width: 100%;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374);
+    border: none;
+    border-radius: 10px;    
+    padding: 12px 15px;
+    font-size: 16px;
+    gap: 5px;
+    align-items: center;
+}
+
+
+/*.container .password .content input {
+    width: 250px;
+    height: 100%;   
+    outline: none;
+    border: none;
+    
+    padding: 10px;
+}
+*/
+
+i {
+    color: rgba(128, 128, 128, 0.612);
+}
+
+.noConform,  .fa-exclamation-triangle {
+    font-size: 0.7rem;
+    color: red;
+}
+
+.eye-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.eye-icon-slash {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.container .content .btn-pass {
+    all: unset;
+    position: relative;
+}
+
+.container .password .content input {
+    width: 100%;
+    outline: none;
+    /* box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374); */
+    border: none;
+  
+}
+
+.container .passwordConfirm .content input {
+    width: 100%;
+    outline: none;
+    /* box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374); */
+    border: none;
+  
+}
+
+.container .password .content input:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
+  
+}
+
+.container .passwordConfirm .content input:focus {
+    box-shadow: none;
+    outline: none;
+    border: none;
+  
+}
+
+/* .container input[type = "password"]::placeholder {
+    font-weight: 900;
+    font-size: 0.9rem;
+} */
+
+
+.container .date input[type = "date"] {
+    width: 100%;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374);
+    border: none;
+    border-radius: 10px;    
+    padding: 12px 15px;  
+}
+
+
+.container .nom input[type = "text"]  {
+  width: 100%;
+    outline: none;
+    box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374);
+    border: none;
+    border-radius: 10px;    
+    padding: 12px 15px;
+}
+
+.container .email input[type = "email"]  {
+    width: 100%;
+      outline: none;
+      box-shadow: 0px 0px 4px rgba(30, 143, 255, 0.374);
+      border: 1px solid transparent;
+      border-radius: 10px;    
+      padding: 12px 15px;
+  }
+
+  .container .genre-content .genre input[type = "radio"] {
+    padding: 95px;
+    border: 2px solid #6c63ff;
+  }
+
+  .container input {
+    font-family: sans-serif;
+  }
+
+.container input:focus {
+    outline: none;
+    border: 2px solid #6c63ff;
+    box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+.container .genre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container .genre-content .title-genre {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: left;
+}
+
+.container .genre {
+    display: flex;
+    gap: 30px;
+    padding: 10px 0;
+}
+
+/* .container .check {
+    display: flex;
+    gap: 10px;
+    padding: 10px 0;
+} */
+
+.container .btn {
+    display: flex;
+    gap: 40px;
+}
+
+.container .btn-form {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    transition: 1s ease;
+    width: 100%;
+}
+
+.container .btn-submit {
+    background-color: dodgerblue;
+    border: 1px solid dodgerblue;
+    
+}
+
+.container .btn-submit:hover {
+    background-color: transparent;
+    color: dodgerblue;
+}
+
+/* 
+.container .btn-reset {
+    background-color: red;
+    border: 1px solid orangered;
+    opacity: 0.8;
+}
+
+.container .btn-reset:hover {
+    background-color: transparent;
+    color: orangered;
+    opacity: 0.8;
+} */
